@@ -8,4 +8,7 @@
     <Project Path="app/src/EscribaApp.Aplicacao/EscribaApp.Aplicacao.csproj" />
     <Project Path="app/src/EscribaApp.Dominio/EscribaApp.Dominio.csproj" />
   </Folder>
+  <Folder Name="/testes/">
+    <Project Path="testes/EscribaApp.Dominio.Tests/EscribaApp.Dominio.Tests.csproj" />
+  </Folder>
 </Solution>

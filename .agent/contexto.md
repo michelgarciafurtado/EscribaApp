@@ -38,9 +38,9 @@ Representa a obra que o autor está planejando.
 Um projeto possui:
 
 - Nome
-- Tipo: Filme, Novela, Livro ou HQ.
+- Tipo: Filme, Novela, Livro, HQ, Video, PecaTeatral ou Outro.
 - Descrição.
-- Gênero.
+- Gêneros (múltiplos).
 - Personagens cadastrados.
 - Lista de Pontos Chave.
 - Lista de Quadros que compõem a escaleta.
@@ -61,9 +61,8 @@ adotada pelo autor.
 
 Um Quadro possui:
 
-- Referência ao Quadro antecessor, quando houver.
-- Referência ao Quadro sucessor, quando houver.
-- Referência ao Ponto chave, quando houver.
+- Ligações com Quadros antecessores e sucessores, permitindo ramificações e convergências sem ciclos.
+- Referências aos Pontos-chave, quando houver.
 - Indicação do Bloco ao qual pertence.
 - Lista de personagens envolvidos.
 - Descrição da cena ou do capítulo.
@@ -113,13 +112,13 @@ na construção da história.
 
 ## Funcionalidades previstas
 
-- Cadastrar projetos dos tipos Filme, Novela, Livro e HQ.
+- Cadastrar projetos dos tipos Filme, Novela, Livro, HQ, Video, PecaTeatral e Outro.
 - Cadastrar os pontos Chave do Projeto
-- Registrar a descrição e o gênero de cada projeto.
+- Registrar a descrição e os gêneros de cada projeto.
 - Cadastrar personagens de um projeto.
 - Criar e organizar Pontos chave.
 - Criar e organizar Quadros na escaleta.
-- Definir o antecessor e o sucessor de cada Quadro.
+- Definir antecessores e sucessores de cada Quadro e a prioridade de suas alternativas de saída.
 - Associar Quadros a Blocos.
 - Associar personagens aos Quadros.
 - Associar pontos chave aos Quadros.

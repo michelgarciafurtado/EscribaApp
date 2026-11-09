@@ -18,15 +18,15 @@ Cada degrau representa uma cena ou capítulo específico da obra. Cada quadro po
 
 ### Requisitos Funcionais
 - **Cadastro de Projetos** (Livro, filme, vídeo, novela, peça teatral e outros):
-  - Nome, Gênero (múltiplos), Lista de personagens, Lista de fatos-chave.
+  - Nome, Gêneros (múltiplos), Lista de personagens, Lista de pontos-chave.
   - Criação de ramificações de quadros e organização em blocos.
 - **Cadastro de Personagens**:
   - Nome, Descrição, Biotipo, Contribuições no enredo.
-- **Cadastro de Fatos-Chave**:
+- **Cadastro de Pontos-chave**:
   - Sequência, Descrição.
 - **Cadastro de Quadros**:
-  - Sucessor e antecessor (suporte a múltiplos antecessores/sucessores), Nome, Personagens e Fatos-chave relacionados.
-  - *Nota:* Personagens e fatos-chave devem estar previamente cadastrados para serem associados.
+  - Ligações com múltiplos antecessores e sucessores, Nome, Personagens e Pontos-chave relacionados.
+  - *Nota:* Personagens e pontos-chave devem estar previamente cadastrados para serem associados.
 
 ---
 
@@ -38,6 +38,7 @@ Cada degrau representa uma cena ou capítulo específico da obra. Cada quadro po
   - `.agent/tarefas`: Armazenamento das tarefas de desenvolvimento.
   - `app/src`: Bibliotecas de domínio e aplicação.
   - `app/adapters`: Infraestrutura e interface Razor Pages.
+  - `testes`: Testes de domínio com NUnit.
   - `diario`: Registro de experiências e aprendizados (criado após a primeira tarefa).
 
 ---
@@ -86,3 +87,18 @@ dotnet run --project app/adapters/EscribaApp.Web --launch-profile http
 Acesse o endereço exibido no terminal. A página inicial funciona sem banco de dados.
 Não registre credenciais nos arquivos; quando necessário, utilize variáveis de
 ambiente ou User Secrets no desenvolvimento.
+
+## Domínio e testes
+
+`Projeto` controla personagens, quadros, blocos, pontos-chave e gêneros.
+As ramificações são representadas por `LigacaoQuadros`, um objeto de valor
+imutável com origem, destino e prioridade da saída. O agregado impede ciclos
+e associações entre obras diferentes. Antecessores, sucessores e ordenação
+topológica são consultados a partir dessa coleção única de ligações.
+
+```powershell
+dotnet test testes/EscribaApp.Dominio.Tests/EscribaApp.Dominio.Tests.csproj
+```
+
+As regras detalhadas estão em `.agent/regras-negocio.md`. As entidades ainda
+não possuem mapeamento de persistência ou integração com a interface Web.

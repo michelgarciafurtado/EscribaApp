@@ -1,22 +1,19 @@
-# Tarefa: Criar o projeto
+# Tarefa: Modelar o Dominio
 
 ## Objetivo
 
-- Criar a estrutura de pastas de acordo com padrão hexagonal, importar as bibliotecas de IdentityDb e PostgreSql no projeto de infra.
-- O padrão hexagonal deverá estar dentro de uma pasta app.
-  - o padrão de nome dos projetos deverá ser EscribaApp.Nome_do_projeto.
-  - dentro de app deverão ter as pastas src e adapters.
-  - os projetos Dominio e Aplicacao deverão estar dentro de src e infra e web dentro de adapters.
-  - os projetos Dominio, Aplicacao, Infra deverão ser do tipo biblioteca de classes.
-  - o projeto web devera ser do tipo razor page.
-  - Dentro de Dominio deverão estar as pastas Agregados, Entidades e ObjetosValor
+- Criar os agregados, entidades e objetos de valor.
+- Armazenar cada tipo dentro da sua respecitva pasta.
+- As classes geradas devem ser ricas e atender aos principios SOLID.
 
 ## Comportamento esperado
 
-- Que o projeto esteja com a slnx e os projetos de bibliotecas de classe e WebApi nas Pastas e projetos criados no padrão Hexagonal.
+- Agregado Projeto deve conter uma Lista de atores, uma lista de Quadros, uma lista de pontos chave além de campos especificados em requisitos funcionais especificados no README.md e as funcionalidades previstas no arquivo de contexto.
+- Exibir possiveis inconsistências e sugerir formas de contornar.
+- Elaborar sugestao de métodos de consulta e organização das ramificações dos quadros.
 
 ## Critérios de aceite
 
-- Não criação de dependencias para o Domain.
-- Projetos respeitando as regras de referência propostas pela metodologia DDD.
+- Agregados, entidades e Objetos de valor na sua respectiva pasta.
+- Não violação dos princípios SOLID e DDD.
 - Uso da lingua portuguesa.
