@@ -1,45 +1,49 @@
-﻿# EscribaApp
+# EscribaApp
 
- ## Introdução e objetivo
+> Aplicação web para estruturação de obras literárias e audiovisuais através da técnica de escaleta, desenvolvida com metodologia Spec Driven Design (SDD) e assistência de IA.
 
- Desenvolver uma aplicação para exercitar e consolidar conceitos e competências de desenvolvimento usando técnicas do SDD, com apoio de IA Codex como agente no Visual Studio Code.
- 
- A documentação relata o projeto dos pontos de vista do contexto de negócio e do técnico.
+---
 
-### Contexto de negócio
+## 🎯 Introdução e Objetivo
 
- O projeto se destina a criar uma aplicativo web com a finalidade ajudar escritores e diretores a estruturarem suas obras através da técnica da escaleta.
+Desenvolver uma aplicação para exercitar e consolidar conceitos e competências de desenvolvimento usando técnicas do **SDD (Spec Driven Design)**, com apoio de IA como agente no **Visual Studio Code**.
 
- A escaleta, ou "escada" representa um projeto quer seja um livro, filme, peça teatral ou outra obra artistica. Cada degrau siginica uma cena ou capítulo específico da obra, cada quadro tem relação com seu antecessor, sucessor, anota quem participa dele, seu objetivo e descrição facilitando ao autor manter a coerencia lógica dentro da perspectiva temporal da obra, permitindo que os fatos importantes sejam mantidos de maneira consistente.
+---
 
- O projeto deve ter os seguintes requisitos funcionais:
- - Cadastro de um projeto (Livro, filme, vídeo, novela, peça teatral e outros)
-   - O projeto deve ter Nome, gênero, pode ser mais de um, lista de personagens, lista de fatos chave.
-   - Cada projeto permitir a criação de ramificações de quadros.
-   - Organização em blocos. 
- -  Cadastro de personagens (Nome, Descrição, Biotipo, contribuições no enredo).
- -  Cadastro de fatos chave (Sequencia, descrição)
- -  Cadatro de quadros (Sucessor e antecessor, se houver, nome, personagens, fatos chave relacionados, se houver)
-    - O quadro pode ter mais de um antecessor e sucessor
-    - Os personagens e fatos chave devem estar previamente cadastrados para serem relacionados ao quadro  
+## 🏢 Contexto de Negócio
 
-### Contexto de aplicação Técnica
+O **EscribaApp** destina-se a ajudar escritores e diretores a estruturarem suas obras através da técnica da **escaleta**. 
 
- Empregar a metodologia de desenvolvimento SDD (Spec Driven Design) com apoio de IA Codex. As etapas do desenvolvimento deverão obedecer a critérios pré estabelecidos de arquitetura, contexto, regras de negócio, padrões de código.
- 
- O desenvolvimento será feito em tarefas, armazenadas dentro da pasta tarefas, dentro da pasta .agent, enquanto o código deverá ficar em uma pasta no mesmo nível da pasta .agent de nome src.
+Cada degrau representa uma cena ou capítulo específico da obra. Cada quadro possui relação com seu antecessor e sucessor, registrando quem participa dele, seu objetivo e descrição, facilitando ao autor manter a coerência lógica dentro da perspectiva temporal da obra.
 
- Dentro da pasta src deverá estar aplicada a estrutura Hexagonal dividida em core, adapters.
+### Requisitos Funcionais
+- **Cadastro de Projetos** (Livro, filme, vídeo, novela, peça teatral e outros):
+  - Nome, Gênero (múltiplos), Lista de personagens, Lista de fatos-chave.
+  - Criação de ramificações de quadros e organização em blocos.
+- **Cadastro de Personagens**:
+  - Nome, Descrição, Biotipo, Contribuições no enredo.
+- **Cadastro de Fatos-Chave**:
+  - Sequência, Descrição.
+- **Cadastro de Quadros**:
+  - Sucessor e antecessor (suporte a múltiplos antecessores/sucessores), Nome, Personagens e Fatos-chave relacionados.
+  - *Nota:* Personagens e fatos-chave devem estar previamente cadastrados para serem associados.
 
-## Estrutura da aplicação 
+---
 
-### DDD e Hexagonal
+## ⚙️ Contexto Técnico e Arquitetural
 
-Princípios de DDD e organização de arquitetura Hexagonal
+- **Metodologia:** SDD (Spec Driven Design) com apoio de IA no VS Code.
+- **Arquitetura:** DDD e **Arquitetura Hexagonal** dividida entre `core` e `adapters`.
+- **Estrutura de Diretórios:**
+  - `.agent/tarefas`: Armazenamento das tarefas de desenvolvimento.
+  - `src`: Código-fonte da aplicação (Hexagonal).
+  - `diario`: Registro de experiências e aprendizados (criado após a primeira tarefa).
 
-### Metodologia de trabalho
+---
 
-- Cada tarefa sera executa em branch própria com o mesmo nome da tarefa;
-- Após a verificação da tarefa e esta ser considerada aprovada devera ser realizado 'merge' nas branchs develop e main
-- Manter interferência mínima de codificação manual no projeto, apenas pequenos detalhes serão consiliados de maneira manual.
-- Experiencias e aprendizados serão mantidos na pasta diario que será criada após a entrega da primeira tarefa
+## 🔄 Metodologia de Trabalho
+
+- Cada tarefa é executada em uma **branch própria** com o mesmo nome da tarefa.
+- Após a verificação e aprovação, é feito o *merge* nas branches **`develop`** e **`main`**.
+- Interferência mínima de codificação manual (foco em ajustes pontuais).
+- Registro de experiências e aprendizados após cada tarefa realizada.
