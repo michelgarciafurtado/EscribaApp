@@ -12,7 +12,7 @@ Desenvolver uma aplicação para exercitar e consolidar conceitos e competência
 
 ## 🏢 Contexto de Negócio
 
-O **EscribaApp** destina-se a ajudar escritores e diretores a estruturarem suas obras através da técnica da **escaleta**. 
+O **EscribaApp** destina-se a ajudar escritores e diretores a estruturarem suas obras através da técnica da **escaleta**.
 
 Cada degrau representa uma cena ou capítulo específico da obra. Cada quadro possui relação com seu antecessor e sucessor, registrando quem participa dele, seu objetivo e descrição, facilitando ao autor manter a coerência lógica dentro da perspectiva temporal da obra.
 
@@ -33,10 +33,11 @@ Cada degrau representa uma cena ou capítulo específico da obra. Cada quadro po
 ## ⚙️ Contexto Técnico e Arquitetural
 
 - **Metodologia:** SDD (Spec Driven Design) com apoio de IA no VS Code.
-- **Arquitetura:** DDD e **Arquitetura Hexagonal** dividida entre `core` e `adapters`.
+- **Arquitetura:** DDD e **Arquitetura Hexagonal**, com o núcleo em `app/src` e adaptadores em `app/adapters`.
 - **Estrutura de Diretórios:**
   - `.agent/tarefas`: Armazenamento das tarefas de desenvolvimento.
-  - `src`: Código-fonte da aplicação (Hexagonal).
+  - `app/src`: Bibliotecas de domínio e aplicação.
+  - `app/adapters`: Infraestrutura e interface Razor Pages.
   - `diario`: Registro de experiências e aprendizados (criado após a primeira tarefa).
 
 ---
@@ -47,3 +48,41 @@ Cada degrau representa uma cena ou capítulo específico da obra. Cada quadro po
 - Após a verificação e aprovação, é feito o *merge* nas branches **`develop`** e **`main`**.
 - Interferência mínima de codificação manual (foco em ajustes pontuais).
 - Registro de experiências e aprendizados após cada tarefa realizada.
+
+## Estrutura da solução
+
+```text
+EscribaApp.slnx
+app/
+├── src/
+│   ├── EscribaApp.Dominio/
+│   │   ├── Agregados/
+│   │   ├── Entidades/
+│   │   └── ObjetosValor/
+│   └── EscribaApp.Aplicacao/
+└── adapters/
+    ├── EscribaApp.Infra/
+    └── EscribaApp.Web/
+```
+
+Dominio não possui referências a outros projetos ou pacotes externos.
+Aplicacao referencia Dominio. Infra referencia Aplicacao e Dominio.
+Web referencia Aplicacao e Infra para composição das dependências.
+
+Infra inclui `Microsoft.AspNetCore.Identity.EntityFrameworkCore` para integração
+do Identity com EF Core e `Npgsql.EntityFrameworkCore.PostgreSQL` para PostgreSQL.
+Esta estrutura inicial ainda não configura autenticação, contexto de banco ou migrações.
+
+## Execução local
+
+Requer o SDK .NET 10. Execute os comandos na pasta que contém `EscribaApp.slnx`:
+
+```powershell
+dotnet restore EscribaApp.slnx
+dotnet build EscribaApp.slnx --no-restore
+dotnet run --project app/adapters/EscribaApp.Web --launch-profile http
+```
+
+Acesse o endereço exibido no terminal. A página inicial funciona sem banco de dados.
+Não registre credenciais nos arquivos; quando necessário, utilize variáveis de
+ambiente ou User Secrets no desenvolvimento.

@@ -2,30 +2,30 @@
 
 A aplicação utiliza DDD e arquitetura hexagonal.
 
-## Domain
+## Dominio
 
 Contém agregados, entidades, objetos de valor e regras de negócio.
 
-Não depende de Application, Infrastructure ou Api.
+Não depende de Aplicacao, Infraestrutura ou Api.
 Não utiliza tipos do ASP.NET Core ou do Entity Framework Core.
 
-## Application
+## Aplicacao
 
 Contém casos de uso, DTOs e portas necessárias aos casos de uso.
 
-Depende de Domain.
-Não depende de Infrastructure ou Api.
+Depende de Dominio.
+Não depende de Infraestrutura ou Api.
 
-## Infrastructure
+## Infraestrutura
 
 Implementa persistência, identidade e integrações externas.
 
-Depende de Application e Domain.
+Depende de Application e Dominio.
 
-## Api
+## web
 
 Recebe requisições HTTP e chama os casos de uso.
 Configura a injeção de dependências.
 
 Não implementa regras de negócio.
-Pode referenciar Infrastructure para registrar suas implementações.
+Pode referenciar Infraestrutura para registrar suas implementações.

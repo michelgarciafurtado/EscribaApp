@@ -71,10 +71,13 @@ Um Quadro possui:
 
 ### Bloco
 
-Representa um agrupamento de Quadros dentro de um projeto.
+Representa um agrupamento de Quadros dentro de um projeto que representa um momento específico da trama.
 
-A finalidade e as regras de organização dos Blocos ainda
-precisam ser detalhadas.
+Cada bloco possui:
+
+- Sequencia.
+- Descricao do objetvo.
+- lista de quadros que pertencem.
 
 ### Personagem
 
@@ -121,12 +124,3 @@ na construção da história.
 - Associar personagens aos Quadros.
 - Associar pontos chave aos Quadros.
 - Registrar descrições, objetivos e pontos-chave dos Quadros.
-
-## Pontos a esclarecer
-
-- Atores são personagens fictícios
-- Os Blocos serão utilizados para agrupar os quadros e ordena-los.
-- O projeto poderá ter mais de um gênero.
-- Definir se a escaleta terá somente uma sequência  - boa ideia vamos permitir ramificacoes
-  ou permitirá ramificações.
-- O quadro nao tera um tipo explicito para deixar o autor escolher como chamar.

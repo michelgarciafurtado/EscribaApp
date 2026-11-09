@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/app/" />
+  <Folder Name="/app/adapters/">
+    <Project Path="app/adapters/EscribaApp.Infra/EscribaApp.Infra.csproj" />
+    <Project Path="app/adapters/EscribaApp.Web/EscribaApp.Web.csproj" />
+  </Folder>
+  <Folder Name="/app/src/">
+    <Project Path="app/src/EscribaApp.Aplicacao/EscribaApp.Aplicacao.csproj" />
+    <Project Path="app/src/EscribaApp.Dominio/EscribaApp.Dominio.csproj" />
+  </Folder>
+</Solution>
